@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "jupiter";
+  src: url("../fonts/jupiter.ttf"); }
+@font-face {
+  font-family: "vdub";
+  src: url("../fonts/VDUB.TTF"); }
+.vHeader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff; }
+
+.container {
+  max-width: 960;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: auto;
+  text-align: center; }
+
+.fullscreenVideoWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+  .fullscreenVideoWrap video {
+    min-width: 100%;
+    min-height: 100%; }
+
+.headerOverlay {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #000000;
+  z-index: 1;
+  opacity: 0.75; }
+
+.headerContent {
+  z-index: 2; }
+  .headerContent h1 {
+    font-family: vdub;
+    font-size: 80px;
+    margin-bottom: 0; }
+  .headerContent p {
+    font-size: 1.75rem;
+    display: block;
+    padding-bottom: 2rem; }
+
+.inputContainer {
+  margin: auto;
+  max-width: 500px; }
+
+.cardButtons {
+  align-items: center; }
+
+.uberCard {
+  padding-top: 25px !important; }
+
+@media screen and (min-width: 1px) and (max-width: 640px) {
+  .heliosBrand {
+    font-size: 10px; }
+
+  .headerContent {
+    padding-left: 35px; }
+    .headerContent h1 {
+      font-size: 30px; }
+    .headerContent p {
+      display: none; } }
+@media screen and (min-width: 641px) and (max-width: 768px) {
+  .headerContent h1 {
+    font-size: 50px; }
+  .headerContent p {
+    display: block; }
+
+  .container {
+    padding-right: 3rem;
+    padding-left: 3rem; } }
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "jupiter";
+  src: url("../fonts/jupiter.ttf"); }
+@font-face {
+  font-family: "vdub";
+  src: url("../fonts/VDUB.TTF"); }
+.cardBody {
+  background: #262626; }
+
+section {
+  background: #262626; }
+
+.imageBox {
+  position: relative;
+  margin: 40px auto;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 300px; }
+  .imageBox h3 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 12%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 5xp rgba(0, 0, 0, 0.5);
+    transition: 0.5s; }
+  .imageBox h4 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    bottom: 2%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 5xp rgba(0, 0, 0, 0.5);
+    transition: 0.5s; }
+
+.recieptBody {
+  background: #333; }
+
+.recieptText {
+  position: relative;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  align-items: center; }
+  .recieptText h5 {
+    font-size: 75px; }
+
+.col-form-label {
+  color: #000000;
+  align-items: flex-start; }
+
+.cardDynamic {
+  z-index: 5; }
+  .cardDynamic :hover {
+    cursor: pointer; }
+
+.cardContainer {
+  padding-top: 50px;
+  background: #262626;
+  height: 100%; }
+
+.cardRow {
+  background: #262626;
+  height: 100%; }
+
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "jupiter";
+  src: url("../fonts/jupiter.ttf"); }
+@font-face {
+  font-family: "vdub";
+  src: url("../fonts/VDUB.TTF"); }
+.fab {
+  position: relative;
+  top: 15px;
+  padding: 0 25px 0 0; }
+
+.newAccount {
+  position: relative;
+  padding-right: 25px; }
+
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "jupiter";
+  src: url("../fonts/jupiter.ttf"); }
+@font-face {
+  font-family: "vdub";
+  src: url("../fonts/VDUB.TTF"); }
+.heliosBrand {
+  font-family: vdub; }
+
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "jupiter";
+  src: url("../fonts/jupiter.ttf"); }
+@font-face {
+  font-family: "vdub";
+  src: url("../fonts/VDUB.TTF"); }
+* {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "jupiter";
+  src: url("../fonts/jupiter.ttf"); }
+@font-face {
+  font-family: "vdub";
+  src: url("../fonts/VDUB.TTF"); }
+body {
+  margin: 0;
+  font-family: jupiter;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden; }
+
+/*# sourceMappingURL=app.css.map */

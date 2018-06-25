@@ -1,0 +1,31 @@
+<div class="container-fluid cardContainer">
+    <div class="container">
+        <div class="row cardRow">
+
+            {{#if rides}} {{#each rides}} {{#if uber}}
+            <div class="col-sm-3 request cardDynamic" 
+            data-id={{id}} 
+            data-company={{company}}>
+                <div class="imageBox">
+                    <img src="./assets/images/uberLogo.jpg" class="img-responsive" alt="uberLogo">
+                    <h3>{{type}}</h3>
+                    <h4>{{estimate}}</h4>
+                </div>
+            </div>
+            {{else}}
+
+            <div class="col-sm-3 request cardDynamic" 
+            data-company={{company}}
+            data-type={{type}}>
+                <div class="imageBox">
+                    <img src="./assets/images/lyftLogo.jpg" class="img-responsive" alt="uberLogo">
+                    <h3>{{type}}</h3>
+                    <h4>{{estimate}}</h4>
+                </div>
+            </div>
+
+            {{/if}} {{/each}} {{/if}}
+
+        </div>
+    </div>
+</div>

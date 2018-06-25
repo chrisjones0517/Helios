@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/assets/images/helios.png">
+    <!-- RESET LINK -->
+    <link rel="stylesheet" href="/assets/css/reset.css"> {{!-- FONT AWESOME --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- JQUERY SCRIPT LINKS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- PERSONAL STYLE SHEET -->
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <!-- PERSONAL JAVASCRIPT SHEET -->
+    <script src="/assets/js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyAFuaWGp7mSHWHkI1rqpexi_YKNGFszVXQ"></script>
+    
+    
+
+    <title>Helios</title>
+</head>
+
+<body>
+
+    
+    {{> _navbar}}
+    
+    {{> _video}}
+    
+    {{{body}}}
+    
+    <div id="loginFail" data-attr="{{loginFail}}"></div>
+    <div id="registerFail" data-attr="{{registerFail}}"></div>
+    
+    <script>
+
+        (function()
+        {
+          if( window.localStorage )
+          {
+            if( !localStorage.getItem('firstLoad') )
+            {
+              localStorage['firstLoad'] = true;
+              window.location.reload();
+            }  
+            else
+              localStorage.removeItem('firstLoad');
+          }
+        })();
+
+        let failStatus = $('#loginFail').attr('data-attr');
+        if (failStatus) {
+            $('#loginModal').modal('show');
+        };
+
+        let registerStatus = $('#registerFail').attr('data-attr');
+        if (registerStatus) {
+            $('#newAccountModal').modal('show');
+        };
+
+    </script> 
+     
+    <script>
+        var input = document.getElementById('pickupLocation');
+        var search = new google.maps.places.Autocomplete(input, { types: ['address'] });
+        google.maps.event.addListener(search, 'place_changed', function () {
+
+        });
+        google.maps.event.addListener(search, 'place_changed', function (event) {
+        input = document.getElementById('pickupLocation').value;
+        
+        var geocodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + input + '&key=AIzaSyAFuaWGp7mSHWHkI1rqpexi_YKNGFszVXQ';
+        });
+
+        var input2 = document.getElementById('destLocation');
+        var search2 = new google.maps.places.Autocomplete(input2, { types: ['address'] });
+        google.maps.event.addListener(search2, 'place_changed', function () {
+
+        });
+        google.maps.event.addListener(search2, 'place_changed', function (event) {
+        input2 = document.getElementById('destLocation').value;
+        
+        var geocodeURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + input2 + '&key=AIzaSyAFuaWGp7mSHWHkI1rqpexi_YKNGFszVXQ';
+        });
+        
+    </script>
+    
+</body>
+
+</html>

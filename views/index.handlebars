@@ -1,0 +1,134 @@
+<!-- MIDDLE CONTENT -->
+<header class="vHeader container">
+    {{!-- <div class="fullscreenVideoWrap">
+        <video src="./assets/video/carsBG.mov" autoplay='true' loop='true'></video>
+    </div>
+    <div class="headerOverlay"></div> --}}
+    <div class="headerContent">
+        
+        <h2 class="text-success">{{message}}</h2>
+        <h1>H E L I O S</h1>
+        <br>
+        <p>With Helios finding a ride has never been easier! Our technology brings together Uber and Lyft to not only find you
+            the fastest ride to your destination, but also the cheapest! We take both services, compare the prices, and show
+            you the best options for you to arrive at your destination.</p>
+
+        {{#if user}}
+        <div class="inputContainer">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="input-group mb-3">
+                        <input id="pickupLocation" class="form-control" name="location1" placeholder="Enter start location" type="text" aria-label="Enter pickup location" aria-describedby="basic-addon2"></input>
+                        <div class="input-group-append">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="input-group mb-3">
+                        <input id="destLocation" class="form-control" name="location2" placeholder="Enter destination" type="text" aria-label="Enter destination" aria-describedby="basic-addon2"></input>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-info" type="submit" id="routes">Find A Ride!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{else}}
+        {{!-- enter html here to tell user to login --}}
+        <div class='row'>
+            <div class="col-sm-12">
+                <div class="headerContent">Please login to continue...</div>
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+</header>
+<!--  -->
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6 class="text-danger">{{loginFail}}</h6>
+                <form action="/auth/login" method="POST">
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Username:</label>
+
+                        <input type="text" class="form-control" id="username1" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-form-label">Password:</label>
+                        <input type="password" class="form-control" id="password1" name="password">
+                    </div>
+                    <button type="button" class="btn btn-link newAccount" data-toggle="modal" data-target="#newAccountModal" data-dismiss="modal">Create new account</button>
+                    <a href="/auth/google">
+                        <i class="fab fa-google-plus-square fa-3x"></i>
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- CREATE NEW ACCOUNT MODAL --}}
+<div class="modal fade" id="newAccountModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createAccountModalLabel">Create your Helios account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{#if errors}} 
+                {{#each errors}}
+                <h6 class="text-danger">{{this}}</h6>
+                {{/each}} 
+                {{/if}}
+                <h6></h6>
+                <form action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Enter your first name:</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="{{firstName}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Enter your last name:</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="{{lastName}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Choose a username:</label>
+
+                        <input type="text" class="form-control" id="username" name="username" value="{{username}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-form-label">Choose a password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="col-form-label">Confirm your password:</label>
+                        <input type="password" class="form-control" id="password2" name="password2">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create your account!</button>
+                </form>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
